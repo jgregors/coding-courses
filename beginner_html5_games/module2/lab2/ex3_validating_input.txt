@@ -1,0 +1,110 @@
+We have a working program but there are still some things that bug me (pun intended).
+At the moment, if the user input something other than a number, the program doesn't 
+behave as expected and they are left with a useless program. At this stage they would
+be feeling somewhat unhappy with the whole experience. To fix this, we need to make 
+sure that anything the user enters is validated and that we are operating on the 
+information we expect. In our random number generator code, we expect the user to input 
+numbers - integers to be specific. If the user inputs a letter, the do something unexpected
+like return a weird value, throw an error or crash.
+
+Open the broswer console and type in the following:
+
+Math.random() * "w"
+NaN
+
+We have allowed a "bug" to creep into our program. Now we cannot be sure how other 
+parts of our program will respond if they are given this input to operate on. (by the way
+a bug is the name given to an error and is the basis for the name of the debugger. It
+comes from the days when computers were huge machines which filled whole rooms and bugs
+would crawl inside them and cause problems. There would literally be a bug in the code!).
+
+The value returned from the prompt popup is a string representation of a number but we 
+need to have a number type, not a string type. Luckily, this is a common problem in computing
+and we have solutions. We will "parse" the string using the parseInt function which will
+attempt to change the string into a number. If the string cannot be changed into a number,
+it will return NaN.
+
+parseInt("32");
+32
+
+parseInt("z");
+NaN
+
+Then, we have to check if the number is NaN and decide what to do when it is not a number.
+The isNaN function takes value and returns whether that value is (or can be safely converted)
+to a number as a boolean.
+
+isNaN(2)
+true
+
+isNaN("10")
+true
+
+isNaN("xyz")
+false
+
+Truth be told, our program is not going to crash when a NaN value is let through, but
+it is defintely not correct to allow these values to be displayed. By validating the input as 
+soon as possible we don't leave to chance the fact that other parts of our code may 
+not know how to handle NaN and therefore eliminate a lot of possible sources for bugs.
+So in our code, when we have to think about the possible problems that can occur and 
+how we can resolve them.
+
+So now we know how to check for NaN but we have to do something when one is encountered. We will
+use an if statement to check when isNaN is true, we will alert the user to their error.
+
+	<script>
+
+      while(confirm("Do you want a random number?")) {
+
+        var min = parseInt(prompt("What\'s the lower bound?"));
+        if(isNaN(min)) {
+          alert("You must enter a number.");
+        }
+
+        var max = parseInt(prompt("What\'s the upper bound?"));
+        if(isNaN(max)) {
+          alert("You must enter a number.");
+        }
+
+        var random = Math.floor(Math.random() * (max - min + 1)) + min;
+
+        alert("Your number is " + random);
+      }
+      
+      alert("No more numbers.");
+
+  		</script>
+
+  This tells the user that something is wrong but the program will continue executing and the
+  erroneuos value will keep wreaking havoc. This is where we can use the "continue" statement.
+  continue will cause the while loop to exit and return to the top of the loop, in our case
+  causing our confirm popup to display.
+
+  <script>
+
+      while(confirm("Do you want a random number?")) {
+
+        var min = parseInt(prompt("What\'s the lower bound?"));
+        if(isNaN(min)) {
+          alert("You must enter a number.");
+          continue;
+        }
+
+        var max = parseInt(prompt("What\'s the upper bound?"));
+        if(isNaN(max)) {
+          alert("You must enter a number.");
+          continue;
+        }
+
+        var random = Math.floor(Math.random() * (max - min + 1)) + min;
+
+        alert("Your number is " + random);
+      }
+      
+      alert("No more numbers.");
+
+  	</script>
+
+
+ This solves one problem but there is another. 

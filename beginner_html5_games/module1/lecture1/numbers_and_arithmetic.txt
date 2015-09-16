@@ -1,0 +1,48 @@
+The best way to learn is by doing and we will start doing straight away by creating and executing
+our first lines of javascript code in a browser console.
+
+Open google chrome and then click F12. You will see a window appear. Click on the console tab
+and then click the "clear console log" icon to clear anything already there. This is a javascript 
+console and it is a tool for coders to use to test small pieces of javascript. Let's start by 
+learning about numbers and then learning how we can do arithmetic with javascript.
+
+Numbers
+
+A number is a javascript datatype. All programming languages have different types that we can perform 
+operations upon. You will soon encounter other datatypes but for now we will get familiar with numbers 
+and some of the operations we can perform using them.
+
+5 + 10
+15
+
+Numbers in javascript can be shown as integers (whole numbers) or with decimals and can be positive or 
+negative. Just like in maths class if we want to add two numbers together we have to apply an "operator"
+to them, in this case, the "addition" operator. For addition and subtraction, 
+these operators look exactly as they do when we use them with paper and pencil. And as you would expect, if
+we want to add more than 2 numbers, we would type:
+
+5 + 10 + 15 
+
+to get the answer.
+
+We can see with subtraction that we can also get negative numbers:
+
+5 - 10
+
+Next we have the mulitplication operator:
+
+5 * 10
+
+And the division operator
+
+5 / 10
+
+which both look similar to the mulitplication and division operators we learnt at school and operate
+in the same way, resepctively. Notice that the division operation produced a decimal number as an answer.
+
+Lets move on.
+
+
+=========================================
+Time: approx 2:30
+=========================================

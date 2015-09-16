@@ -1,0 +1,66 @@
+What happens when the user enters a lower bound 
+ less than zero? Another bug in our code. We can fix this by adding some extra logic to the 
+ condition of the if statement.
+
+ 	if(isNaN(min) || min <= 0) {
+    	alert("You must enter a number greater than zero.");
+        continue;
+    }
+
+ The || is the logical OR operator. The above if statement now reads like as in english:
+ "If min is not a number or min is smaller than or equal to zero"
+
+The OR operator just needs one of the booleans statements to evaluate to true in order
+for it to be true:
+
+true || false
+true
+
+false || true
+true
+
+true || true
+true
+
+false || false
+false
+
+Because of this, if the left hand side is true, it won't even bother to execute the right hand
+side because the condition has already been satisfied.
+
+There is also an AND operator which we will use in the future. It looks like this && and it 
+needs both its left and right hand sides to be true for it also be true:
+
+true && true
+true
+
+true && false
+false
+
+false && true
+false
+
+false && false
+false
+
+If we wanted, we could create an equivalent expression in our program using the && instead of ||:
+
+!isNaN(min) && min > 0
+
+which reads in english as "min is not not a number and min is greater than zero".
+You can see how logic quickly becomes confusing!
+
+We've fixed the lower bound but we still have a problem with our upper bound. What happens if 
+it is less than or equal to the lower bound? Another bug! We can fix this by using the || operator
+again:
+
+		if(isNaN(max) || max <= min) {
+          alert("You must enter a number which is greater than " + min);
+          continue;
+        }
+
+We now simply alert the user and return to the beginning of the loop whenever the input for the
+upper bound is not a number or when it's smaller than the lower bound.
+
+This will do for our random number generator. Have a look at play around with it and make sure
+you are happy that everyhting is working as you would expect.

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Multiplication</title>
+    </head>
+  	<body>
+  		<script>
+
+      window.addEventListener('load', multiplicationGame);
+      
+      function multiplicationGame() {
+        
+        var totalQuestions; 
+
+        while(totalQuestions = welcomePrompt()) {
+          beginRound(totalQuestions);
+        }
+
+        function welcomePrompt() {
+          var welcomeText = "Welcome! How many multiplication questions would you like?"; 
+          var rawInput = prompt(welcomeText);
+          
+          if(rawInput === null) {
+            // exit game
+            return null;
+          }
+          
+          var rawInput = validateNumberInput(rawInput, welcomeText)
+
+          return parseInt(rawInput);
+        }
+
+        function validateNumberInput(rawInput, promptText) {
+          if(isNaN(rawInput)){
+            displayInputError(rawInput);
+            
+            while(isNaN(rawInput = prompt(promptText))) {
+              displayInputError(rawInput);
+            }
+          }
+          return rawInput;
+        }
+
+        function beginRound(totalQuestions) {
+          var questionNumber = 0;
+          var score = 0;
+
+          while(questionNumber < totalQuestions) {
+
+            questionNumber++;
+
+            var question = createQuestion(questionNumber);
+
+            var answer = askQuestion(question);
+
+            score = reportAnswer(question, answer, score, totalQuestions);
+          }
+
+          displayFinalScore(score, totalQuestions);
+        }
+
+        function displayFinalScore(score, totalQuestions) {
+          alert("You scored " + score + " out of " + totalQuestions + ".");
+        }
+
+        function reportAnswer(question, answer, currentScore, totalQuestions) {
+          if (answer === question.answer) {
+            currentScore++;
+            alert("Correct!" + " Your Score: " + currentScore + "/" + totalQuestions);
+            return currentScore++;
+          } 
+          else {
+            alert("Ooops." + " Your Score: " + currentScore + "/" + totalQuestions);
+            return currentScore;
+          }
+        }
+
+        function askQuestion(question) {
+          var answer;
+          var questionText = "Question " + question.id + ":\n\n" +
+                              question.first + " x " + question.second + " = "
+          while(isNaN(answer = prompt(questionText))) {
+            displayInputError(answer);
+          }
+
+          return parseFloat(answer);
+        }
+
+        function createQuestion(id) {
+          var first = randomInt(12);
+          var second = randomInt(12);
+
+          var answer = first * second;
+
+          return {id: id, first: first, second: second, answer: answer};
+        }
+
+        function displayInputError(input) {
+          alert("You must input a number but you entered " + input);
+        }
+
+        function randomInt(max) {
+          return Math.floor(Math.random() * ++max);
+        }
+      }
+  		</script>
+  	</body>
+</html>

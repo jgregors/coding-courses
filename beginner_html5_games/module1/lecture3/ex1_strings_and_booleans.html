@@ -1,0 +1,59 @@
+Open a browser console
+
+Strings
+=======
+
+Another basic data type that is extremely common in programs is the string. A string is used
+to represent a series of characters. In javascript, a string is any text inside single or double
+quotes:
+
+"hello" or 'hello'
+
+Just like numbers we can store strings (and, for that matter, any other javascript type) in variables:
+
+var name = "Michael Jordan"
+
+Notice that whitespace (the space between words including newlines and tabs) is part of the string.
+And just like numbers, we can use the "+" symbol to perform an operation on strings. This time, it is 
+for concatenation (joining several strings together into one) as opposed to addition although this may
+feel inherently similar to addition, anyway.
+
+var result = "john" + "son";
+
+Unlike with numbers, the -, * and / symbols do not really work with strings and if you use them with
+strings the result is somewhat strange to the untrained eye:
+
+"one" - "two"
+NaN
+
+NaN stands for "Not a Number". Have a think about what may be happening here. There is a lot to cover 
+with strings but this question and others will be answered in coming lectures.
+
+
+Another simple datatype which you will be using in every program that you write is the seemingly
+strangely-named boolean. Booleans (or bools) are named after the mathematician, George Boole, who 
+created the field of mathematical logic that has since been named after him. He even has a crater on the moon 
+named after him so don't underestimate his contribution to the world: computing and by extension
+much of the modern world is based on his work.
+
+A boolean represents true or false in computer programs:
+
+var isReady = true
+isReady = false
+
+The + symbol is also used on booleans
+
+true + true
+2
+
+true + false
+1
+
+false + false
+0
+
+Understanding the results of applying + to booleans is a little less intuitive. Computers are 
+built upon base 2 numbers (also known as binary digits or bits) which literally means 0s and 1s.
+In javascript, booleans are converted to 0s and 1s when used with the + operator, with false equal 
+to 0 and true equal to 1 repsectively; Hence true + true will be converted to 1 + 1 which will 
+evaluate to 2.

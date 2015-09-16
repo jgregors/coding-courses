@@ -1,0 +1,56 @@
+At some point, we need to store some state in our program to be able to keep track
+what is going on. For instance, we might want to keep score for a game. Here is a
+mulitplication game for helping someone practice mulitplication of numbers from
+0 to 12:
+
+	<script>
+
+      var QUESTIONS = 5;
+      var questionCount = 0;
+      var score = 0;
+
+      while(questionCount < QUESTIONS) {
+
+        var first = Math.floor(Math.random() * 13);
+        var second = Math.floor(Math.random() * 13);
+
+        var answer = first * second;
+
+        var input = prompt("Question " + ++questionCount + ":\n\n" +
+                            first + " x " + second + " = ");
+
+        if (parseInt(input) === answer) {
+          alert("Correct!" + " Your Score: " + ++score + "/" + QUESTIONS);
+        } 
+        else {
+          alert("Ooops. " + "Your Score: " + score + "/" + QUESTIONS);
+        }
+      }
+
+      alert("You scored " + score + " out of " + QUESTIONS + ".");
+
+  	</script>
+
+We declare three variables:
+	1) QUESTIONS to keep track of the number of questions for the program to ask. This
+	is not going to be updated and we have written it in capitals to symbolise that it
+	should not be changed. Most other languages have the concept of a concept built into
+	them but unfortunately javascript does not.
+	2) questionCount to keep track of what question is currently being asked. This will be 
+	updated on each loop to keep track of the number of questions asked.
+	3) score to keep track of how many questions the user has answered correctly
+
+At the while loop, we execute while the questionCount is less than the QUESTIONS - 
+remember we start at 0 so the loop will run 5 times.
+
+Inside the while loop, we create two random numbers between 0 and 12 and then multiply
+them together to get the answer.
+
+Next, if the user inputs a number and it equals the answer we alert the user that they are 
+correct and increment score, else we alert the user that they were wrong and leave score
+as is.
+
+When all the questions have been asked and answered, we tell the user their score and then exit. 
+You can see here that we had questionCount and score controlling the game state. We updated at least
+one of them each time through the loop and by doing so we gave our little game the ability
+to know what had gone on previously. 

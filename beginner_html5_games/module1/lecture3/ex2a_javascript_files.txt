@@ -1,0 +1,53 @@
+So far we have been using the browser console to experiment with javascript. This is not
+the only way javascript is ran and is also not the most common. Javascript was developed 
+to manipulate html documents on websites to add more functionality to them. This course 
+concentrates on coding games in javascript and not on web development so there will be no
+in-depth explanation of html manipulation but I will give a brief, high level overview here.
+
+As seen in the previous section, it is easy to create a simple web page using only html and
+css. But there is a problem. We can really only read text from pages or link to other pages.
+How can we do all the fun stuff like add items to shoppings carts, send & delete emails or 
+tweet what we had for breakfast? Javascript gives us the tools to
+do all of this and more. In the console, although we could execute as many statements as we
+wanted, it is a pain to have to type large programs into the console. By adding javascript to
+an html file we can write and execute large programs simply by loading 
+them into a browser. To add javascript to an html document, we need to add a script 
+element to the body of the html:
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Javascript</title>
+    </head>
+  	<body>
+  		<script></script>
+  	</body>
+</html>
+
+By adding this, we can now write some javascript code in the html document and begin to 
+manipulate its contents! Here's an example to show you want we can accompolish with 
+javascript but don't worry if you don't understand the code right now. We will create a
+heading and a button underneath it. When the button is clicked, the heading will be changed.
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Javascript</title>
+    </head>
+  	<body>
+      <h1 id="heading">With Power Comes Great Responsibility</h1>
+  		<script>
+        document.addEventListener("click", function() {
+          document.getElementById("heading").innerHTML = "Francois-Marie Arouet (aka Voltaire)";
+          });
+  		</script>
+  	</body>
+</html>
+
+Here, we have an h1 element which we have given an id attribute set to "heading" and
+with text "With Power Comes Great Responsibility".
+In the script element, we add an eventlistener to the document. Events are things that 
+happen while the page is running like a user clicking the mouse or pressing a key. Here
+we listen for any click event which occurs on the document and then when it occurs we
+want to get the element identified by the id "heading" and set its html to the name
+Francoise-Marie Arouet, the owner of the previously showing quote.

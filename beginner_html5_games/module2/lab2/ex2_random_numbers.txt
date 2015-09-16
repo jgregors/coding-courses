@@ -1,0 +1,92 @@
+We want to create a random number generator which will ask us for a lower and upper bound
+and then produce a random number which is between and includes the bounds. We also want 
+the program to run repeatedly until we tell it that we don't want any more numbers. The
+while loop we encountered previously is perfect for repeating the program and the popup
+boxes can be used again to gather and display data. Let's layout the structure:
+
+	<script>
+
+      while(confirm("Do you want a random number?")) {
+
+        var min = prompt("What\'s the lower bound?");
+
+        var max = prompt("What\'s the upper bound?");
+        
+        var random = 0; // get a random number here.
+
+        alert("Your number is " + random);
+      }
+      
+      alert("No more numbers.");
+
+  	</script>
+
+Instead of introducing a variable outside of the loop, we can place the confirm popup 
+in the while condition and the popup will be called each time we loop.
+
+The prompts are the same but with one new thing. Notice that within the string that the
+single quote is "escaped" by a \. This is because a single quote is a special character
+in javacsript so if we want to use it within a string we have to tell the javascript 
+compiler that we want to treat it as text by preceeding it with a backslash. This is the
+same for a few other characters which has special meanings withing the language like 
+\" (double quote), \n (newline), \t (tab) amongst others. 
+
+ To get random numbers, we have to use a method called Math.random(). Open the browser 
+ console and type it in. It produces a random number between 0 and 1 when it is called
+ but it will never be 1 itself. To get bigger numbers, we have to mulitply the random 
+ number. For example, if we want numbers between 0 and 10 inclusively, we have to 
+ mulitply the random number by 11 because if we only multiply by 10, 10 will never 
+ be returned because the random number will never equal 1 in the first place. Because we
+ take our lower and upper bounds from the user, we have to do a little math to make sure
+ our numbers fall within the right range.  But there is a slight problem: the value given 
+ to us by the prompt popup is a string. For now, we are not going to worry about this 
+ issue as javascript will do some magic and convert the string to a number for us.
+
+ Now our program looks like this:
+
+	<script>
+
+      while(confirm("Do you want a random number?")) {
+
+        var min = prompt("What\'s the lower bound?");
+
+        var max = prompt("What\'s the upper bound?");
+        
+        var random = Math.random() * (max - min + 1) + min;
+
+        alert("Your number is " + random);
+      }
+      
+      alert("No more numbers.");
+
+  	</script>
+
+
+You can see here how just like in math we can use parentheses to change the precedence
+of the operators so that mulitplication or division does not take place before subtraction
+or addition.
+
+Our program almost works as expected, but we want integers, not these ugly numbers with 
+decimal points. We need to use another method called Math.floor to help us here. Math.floor
+simply rounds down to the whole number below it. Let's add it in:
+
+	<script>
+
+      while(confirm("Do you want a random number?")) {
+
+        var min = prompt("What\'s the lower bound?");
+
+        var max = prompt("What\'s the upper bound?");
+        
+        var random = Math.floor(Math.random() * (max - min + 1)) + min;
+
+        alert("Your number is " + random);
+      }
+      
+      alert("No more numbers.");
+
+  	</script>
+
+Just for the record, there is also a Math.round which rounds to the nearest whole number
+and a Math.ceil (short for ceiling) that rounds up to the whole number above it. Check them
+out if you want.

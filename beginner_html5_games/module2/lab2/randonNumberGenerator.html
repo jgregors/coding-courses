@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Random Number Generator</title>
+    </head>
+  	<body>
+  		<script>
+
+      while(confirm("Do you want a random number?")) {
+
+        var min = parseInt(prompt("What\'s the lower bound?"));
+        if(isNaN(min) || min <= 0) {
+          alert("You must enter a number which is greater than 0.");
+          continue;
+        }
+
+        var max = parseInt(prompt("What\'s the upper bound?"));
+        if(isNaN(max) || max <= min) {
+          alert("You must enter a number which is greater than " + min);
+          continue;
+        }
+
+        var random = Math.floor(Math.random() * (max - min + 1)) + min;
+
+        alert("Your number is " + random);
+      }
+      
+      alert("No more numbers.");
+
+  		</script>
+  	</body>
+</html>

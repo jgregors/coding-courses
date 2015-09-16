@@ -1,0 +1,143 @@
+Now that you have seen basic javascript running in the browser, let's build our
+first web app. We are going to make a calculator, who is a little surly and 
+doesn't really like helping but when it does help, it is helpful and maybe a little
+arrogant.
+
+Thinking about what you are going to create is important and being able to have, at the
+very least, a rough outline or plan of attack is a vital part of being a competent coder.
+Our surly calculator is going to:
+	
+	prompt for a first number
+	prompt for a second number
+	prompt for an operator to apply to the numbers
+	display the answer
+
+How is the program going to prompt and get your input? For this simple program, we will 
+use the javascript popup boxes. A popup box is a window that is used to interact with 
+the user. It comes in 3 different types that correspond to 3 different use cases.
+
+First we have the alert box. It is used to make sure information is displayed to a user.
+
+Open the console and type in:
+
+alert("I am alive!")
+
+You will see a window appear which contains the text "I am alive!". You will notice that you
+will not be able to use the browser until you close the box by clicking ok.
+
+Next, we have the confirm box:
+
+confirm("Really? Delete everything?");
+
+You will see that it looks pretty much the same as the alert box but it has a difference; 
+If you click OK, you will see that true is returned to the console. If you click Cancel,
+false is returned to the console. These are the boolean values we spoke about in an earlier
+lecture. As you may guess, this is popup box is useful when you need user confirmation.
+
+The final popup box is the prompt box.
+
+prompt("Enter your name: ");
+
+You will see that when you enter your name and click OK, your name is returned to the 
+console. If you click cancel, null is returned. Null is what we use in programming to represent
+the lack of a value. In this example, when we click OK, we will get a string set to whatever
+you typed in the box. If you typed nothing, the box will return an empty string, "". If you cancel
+, the box returns null. Null is what javascript uses to represent the lack of a value. It is 
+different to the emtpy string, as the string has a type but no contents. Null has no type and 
+no value - it's like nothing exists there at all.
+
+alert, confirm and prompt are all types of "methods". We will speak more about methods in later lectures.
+
+Getting back to our task: we need to prompt the user for two numbers and an operator. As we just saw,
+prompt is perfect for this.
+
+Here's our first prompt:
+
+  		<script>
+
+        var first = prompt("Then give me a number, knucklehead.\n\n");
+
+  		</script>
+
+Now open this file in the browser by going to file -> open file and navigating to the path where this
+file resides. The popup opens and disappears but we are not sure if the program actually works as yet.
+We will use another javascript feature to check what value has been placed in the variable named "first".
+
+console.log is an important method in javascript. It simply logs a value to the console but is an 
+invaluable tool for finding errors in your code. Add the following
+line to your program:
+
+  		<script>
+
+        var first = prompt("Then give me a number, knucklehead.\n\n");
+        console.log(first);
+
+  		</script>
+
+Refresh the browser, enter a value into the prompt and click OK. Now, open the browser console 
+and you should see the value you entered via the prompt in the console window. You could have 
+alternatively used an alert popup in the same way, but console.log is a little less intrusive.
+
+Now let's add our next two prompts as this code should now be familiar to you (you can remove 
+the console.log call for now):
+
+	<script>
+	
+	var first = prompt("Then give me a number, knucklehead.\n\n");
+
+	var second = prompt("And another. Make it snappy.\n\n");
+
+	var operator = prompt("Now. Do you want me to add (+), subtract (-), multiply (*) or divide (/)?");
+
+	</script>
+
+
+Now we have three variables containing the makings of a little calculation. But how do
+we now perform the calculation? Javascript has a very powerful feature named eval. eval
+is a function and you will become very familiar with functions in the future. For now,
+we will gloss over what a function is by saying that it is block of code that performs
+a particular task and can be reused. Remember the undefined keyword that kept on appearing 
+in the console in the previous lectures? That is returned because javascript functions 
+must always return a value. If there is nothing to return, javascript will always return 
+undefined.
+
+Back to eval. eval will take a string that represents some javascript code, and tries to
+evaluate it. For example:
+
+eval("3 + 5")
+
+eval will convert the string "3 + 5" into the corresponding javascript, which
+is 3 + 5 and then execute it, returning 8.
+
+Our code is stored in variables as strings (you may remember, prompt always returns a 
+string) and we will need to concatenate them. Our code will use variables but it still works the 
+same as the previous example:
+
+eval(first + operator + second)
+
+In this example, if first = "3", operator = "+" and second = "5", it will return 8.
+
+(you can check it with console.log if you want)
+
+Now store the result of eval in a variable:
+
+var answer = eval(first + operator +second);
+
+Now, let's add our final alert to display the answer and to give the surly calculator a chance
+to boast about it's accomplishments. The code block should now look like this
+
+	<script>
+ 	var first = prompt("Then give me a number, knucklehead.\n\n");
+
+    var second = prompt("And another. Make it snappy.\n\n");
+
+    var operator = prompt("Now. Do you want me to add (+), _
+                              subtract (-), multiply (*) or divide (/)?");
+
+    var answer = eval(first + operator +second);
+
+    alert("Your answer is " + answer + ". How smart am I?");  
+	</script>  
+
+We now have a working program and let's run it to make sure everything goes as expected.
+

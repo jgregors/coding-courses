@@ -1,0 +1,8 @@
+git init
+git checkout -b <name>
+git add .
+git commit -m ""
+git push origin master
+git branch -d <name>
+
+git clone <url>

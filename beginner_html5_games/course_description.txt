@@ -1,0 +1,207 @@
+Short Ad:
+
+Computer Games Programming For Teenagers & Adults
+
+Coding is becoming a necessity for many jobs and will only increase in importance 
+in the coming decades as more jobs are replaced by software and machines. If you 
+are a school student, a university student or an adult wanting to learn how to code 
+in order to increase your skill-set and get that new job or simply future-proof 
+your career, this course is for you.
+
+"Learning To Code With HTML5 Games" is different from most beginner courses for 
+programmers as the emphasis will be not only on learning programming concepts but 
+also on learning industry standard practices such as unit testing, continuous 
+integration and automated deployment.
+
+This is an 8 week course which will require a weekly 90 minute tutorial and then 
+a further 3 hours of study a week. This course isn't for the faint hearted but 
+get in touch if this is of interest to you.
+
+On completion of this course, you will be able to:
+
+- code in Javascript, the world's most popular programming language
+- create simple websites
+- create web-based games
+- debug programs using Google Chrome developer tools
+- use git (a version control system)
+- use Github, a social coding platform for open source software
+- unit test javascript using the Jasmine library
+- deploy to the Heroku platform
+
+Learning to Code With HTML5 Games
+
+Duration: 8 weeks
+Ages: 15 and up
+Location: XXX (venues TBC)
+Start Date: XXX
+End Date:	XXX
+Times: 	Depending on enrolments, there will be two 90 min classes on the specified dates.
+		If there are enough school students attending there will be a 16:00 class and a 
+		later 17:45 class. Otherwise the only class will start at 17:30. This will be 
+		confirmed well in advance of the commencement of the course.
+Cost: $XXX pp
+Maximum Class Size: XX (Note class will only run if there is a minimum of X people enrolled)
+
+
+What is this course about?
+
+This course is designed to give newcomers to computer programming as well as amateur 
+coders a fun but comprehensive introduction to coding fundamentals and best practices
+centred around 2-dimensional web-based games. The emphasis will be on creating working
+software as opposed to bland, book-based learning. Students will also learn best 
+practises such as using version control (git) and automatically testing the code that
+they write. At the end of the course, students will have their work publicly available
+on the social coding website, Github.com. 
+
+The course layout will include a 90 minute weekly tutorial as well as exercises to be 
+completed in the student's own time which would correspond to about 3 hours work for 
+the rest of the week (a template guideline will be provided). The tutor will be available 
+for help at arranged times between weekly tutorials by email.
+
+Tutorials will be “labs”: the tutor will take the students through live coding examples 
+which they will also complete, extend and analyse.
+
+
+Why Is Learning To Code Important?
+
+Have a think about jobs and the future. How many jobs can you think of that can't be 
+automated or done by robots or machines?
+Everything from making clothes, building houses and milking cows to diagnosing disease, 
+investing in the markets and driving cars can be done by software or software driven machines.
+Learning to code is the single most important step you can take in future-proofing your career.
+
+
+Who is this course for?
+
+This course is aimed at competent computer users 15 years and older. No prior computer 
+programming knowledge is expected. This is not a course for people who are uncomfortable
+with basic computer use. If you cannot agree with all of the statements below, this course
+is probably not for you at the present time:
+
+	I know what a web browser is
+	
+	I am comfortable installing software on my computer
+	
+	If I have a problem with my computer or I don't know how to do something with an
+	application on my computer, I can usually learn how to solve/do it without any help or 
+	guidance from others
+	
+	I stick with problems until they are solved
+	
+	I enjoy seeing how things work “under the hood”
+	
+	I can attend all weekly tutorials and I have around 3 hours time to commit each week to
+	learning and practising course material
+
+
+If you agree with any of the statements below, this course may not be for you but get in contact
+to make sure:
+
+	I can build simple 2D HTML5 games with and without a games engine/library.
+	
+	I have successfully completed introductory level university programming courses
+	
+	I work as a software developer/engineer
+	
+	I have published several apps/websites to the web
+	
+	I will only be attending the tutorials as I don't have time to do any other work.
+
+
+What.... No Certificate?
+
+There is no certificate or any exams associated with the successful completion of this course.
+The emphasis is on "doing" and creating, not on grades. Instead, students will create
+an online code portfolio on Github.com which will showcase their abilities. Github is used by 
+many employers in sourcing future hires for their software teams and is considered by
+many to be more important than certificates or degrees.
+
+Course Outline
+
+Knowledge acquired in the course is accumulative so it is imperative that students keep pace 
+and learn what is required each week.
+
+===============================================================================
+
+Week 1 - Introduction & Creating A Calculator
+
+Course Introduction
+
+The Platform For The Calculator 
+	- HTML in a nutshell
+
+Adding Behaviour To The Calculator
+	- What Is Javascript?
+
+The Operations The Calculator Performs
+	Covers the following Javascript features
+	- numbers
+	- comparison operators
+	- variables
+
+Responding To User Input - A First Attempt At Adding Behaviour
+	Covers the following Javascript features
+	- events
+
+Writing Reusable Code - Improving On The First Attempt
+	Covers the following Javascript features
+	- functions
+
+Keeping Behaviour & Display Separate - Decoupling
+	- add behaviours to the calculator programatically
+
+Dynamically Creating The Calculator - the power of javascript
+	- for loops
+	- booleans
+	- equality
+	- logic
+
+Version Control Basics
+	- git in a nutshell
+
+===============================================================================
+
+Week 2 - Designing & Creating Hangman
+
+Requirements - what we need to build
+
+The Structure Of The Game
+
+A Repository Of Words - arrays
+
+Picking A Random Word
+
+Displaying The Chosen Word
+
+Keeping The Game Running - the "while" loop
+
+Reacting To User Input - more conditionals
+
+Using Version Control In Your Workflow
+
+
+Week 3
+HTML5 Canvas
+Creating a Drawing Application
+Introduction to unit testing
+
+Week 4
+Object Oriented Programming Basics
+Extending the Drawing Application
+
+Week 5
+Introduction to Quintus
+Object Oriented Javascript
+Creating a Pacman Game
+
+Week 6
+Web Architecture Basics
+Introduction to Node.js
+Adding High Scores
+
+Week 7
+Publishing Your Game To The Web
+Automatically Deploying To A Test Environment
+
+Week 8
+Creating a Space Invaders Game

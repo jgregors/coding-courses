@@ -1,0 +1,102 @@
+Computers are powerful and are capable of executing millions of statements per second.
+They can save you mountains of time, especially when you want to automate repetitive 
+tasks.
+
+Javascript uses loops to repeat a code block a set amount of times. We will now look 
+at the while loop and show you how intuitive and simple it is to use.
+
+Say you want to write something to the console 10 times. Here is one way to do it:
+
+<script>
+
+	var i = 0;
+	while(i < 10) {
+		i++;
+		console.log(i + ": hello!");
+	}
+
+</script>
+
+Open the file in the browser, then go to the sources tab in dev tools. Place a breakpoint
+on the line number beside the while loop and you will see the blue marker added. This is
+called a debugger and it is an invaluable tool to learn. It allows us to stop a programs 
+execution and look at what values each variable contains. It is also a good way to help
+familiarise yourself with unfamiliar code. Now press F5 to refresh the page and you will 
+see that the programs stops at the place where you entered the breakpoint. Looking at the 
+code you can see a variable, i, which we use to keep track of the loop and set it to 0.
+Next we come across the while loop, which like the if/else statment, contains a boolean
+condition that needs to be satisfied for the code to proceed to the code contained between
+the curly braces. In this case, we see while(i < 10) which simply reads in english as
+"while i is less than 10". Because i == 0 and is smaller than 10, we satisfy the boolean
+condition and move inside the loop. Now press F10 to step to the next line of the program.
+Here we increment i with the increment operator ++ which takes whatever number is in the
+variable, adds 1 to it and stores it in the variable. So now i equals 1 which you can see
+by hovering over i in the debugger. Pressing F10 again we log the string "1: hello!" to 
+the console. Now for the magic: press F10 again and instead of moving onto any code that 
+is below the while, the program will now move back to the top of the while loop and run 
+check the condition again, and because i = 1 and 1 < 10, we again move back inside the 
+loop, incrementing i to 2 and printing "2: hello!". This will carry on until the condition 
+i < 10 is false which in our program will happen once we have printed to the console 10 
+times and i has been set to 10. Click on the breakpoint you set to remove it and then 
+press F8 to continue exeuction. You will see by looking at the console that it behaved as 
+expected.
+
+This is a verbose explanation, but the concept is an easy one. There are a few things here
+that may cause a little confusion or have not been explained previously. First, Javacsript 
+(and nearly all programming languages)start counting from 0, not 1. You will encounter this 
+in loops and other concepts that we will introduce later. It may take a little while to get
+used to this but don't feel silly if you make a few errors. You will be in good company as
+counting errors are a common source of bugs (errors) in computer program logic.
+
+The other thing that we haven't mentioned yet are the comparison operators. Here we see the
+condition i < 10. It is just like the less than that we use in maths and, you guessed 
+correctly, we can use other operators like greater than (>), less than or equal to (<=), 
+and greater than or equal to (>=). The most common operator will be the equals operator which
+comes in two varieties == and ===. Without going into too much detail, you should use === as 
+it is safer because == will not always work as you expect. There is also two not equals operators
+!= and !==. For now, just use the !==.
+
+To quickly see how they all work open the browser console and type in some expressions:
+
+1 < 10 will return true
+10 > 1 will return false
+1 === 1 will return true
+1 === 10 will return false
+1 != "1" false
+1 !== "1"  true
+1 >= 1 true
+1 >= 0 true
+1 >= 10 false
+
+
+==============
+We then ask the user to answer the calculation of first mulitplied by second. Notice in the
+alert that we use ++ to increment score but by placing the ++ before score, the
+text used in the alert will contain the incremented value. If we used score++, the 
+text would have used the current value and then incremented the value after the line had executed.
+Confused? Open the browser and type in
+
+var x = 0
+undefined
+
+x
+0
+
+++x
+1
+
+x++
+1
+
+x
+2
+
+This might seem weird and the difference is subtle. So to reiterate, x++ will increment after the
+statment it appears in is executed. It is equivalent to:
+
+x++
+alert("value is " + x);
+
+++x will increment while at the same time that the line is executing. 
+
+==============

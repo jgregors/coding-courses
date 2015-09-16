@@ -1,0 +1,73 @@
+We will continue with our surly calculator by making it slighty surlier. We want to add 
+an intitial question to the program so that the user can confirm or quit the program
+before any calculations take place.
+
+We will use a confirm popup box to ask this question and to also return a boolean 
+value representing whether the user clicked OK or Cancel, namely true and false respectively.
+
+But then we need to make a decision. If the user clicks OK, the program will continue on to 
+the calculation that we coded before.
+If the user clicks Cancel, the surly calculator will display a slightly angry response and
+then exit. How can we accompolish this? the answer is to use a conditional operator. In this
+case an if/else statement which looks like this:
+
+if(condition) {
+	// do something here
+} 
+else {
+	// do something here
+}
+
+This code should be self-explanatory: if the condition is true, do what is between the curly braces.
+Otherwise, do what is between the other curly braces. Simple. We will be using if and else here, 
+but you can also use if by itself:
+
+if(condition) {
+	// do something when true
+}
+
+You could also use an if with an if/else like so:
+
+if(condition) {
+	// do something
+}
+else if(condition) {
+	// do something else
+}
+else {
+	// do something else 
+}
+
+and you get have any variation on this that you would like.
+
+Back to our calculator. The final code looks like this:
+
+	<script>
+
+      var proceed = confirm("You want me to calculate something?")
+
+      if(proceed) {
+        var first = prompt("Then give me a number, knucklehead.\n\n");
+
+        var second = prompt("And another. Make it snappy.\n\n");
+
+        var operator = prompt("Now. Do you want me to add (+), _
+                              subtract (-), multiply (*) or divide (/)?");
+
+        var answer = eval(first + operator +second);
+
+        alert("Your answer is " + answer + ". How smart am I?");  
+      }
+      else {
+        alert("Then stop wasting my time.");
+      }
+
+  	</script>
+
+  Here we store the boolean result of the confirmation in a variable then pass it to
+  the if statement. If the variable contains true, the code that produces the calculation
+  will execute. If the variable contains false, an alert telling the user to "stop wasting 
+  time" will pop up and the program will exit.
+
+  // run through the code.
+

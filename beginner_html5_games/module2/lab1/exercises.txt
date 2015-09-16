@@ -1,0 +1,7 @@
+- 	add input validation to the surlySimpleCalculator.html from the previous lecture. Make sure
+	that the user enters only numbers.
+- 	add a while loop to the surlySimpleCalculator.html so that you can do more than one calculation
+	and can quit the program.
+-	add a feature to the surlySimpleCalculator to make it truly temperamental. Make it so that 50%
+	of the time the calculator will collect your input then refuse to do the calculation and the other
+	50% of the time, it completes the calculation.

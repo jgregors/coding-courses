@@ -1,0 +1,60 @@
+Variables are an important concept in programming languages that might seem a little abstract at
+first but are not all that hard to understand once you start using them. Just like in algebra 
+class at school, programming languages can use symbols to represent numbers. It may help to 
+think of the symbol as a box that you are placing a number inside. To create a variable, we need to 
+declare it to the program by using "var".
+
+var x
+
+You will see the word "undefined". Every time you enter something into the console, it tries to evaluate
+what you have input and then give you an answer. In this case, there is no answer so it returns "undefined".
+This will make more sense soon. To place a number inside the variable, we "assign" the number to the 
+variable with the assignment operator which is "=". This is not the same as the equals sign we use in 
+math class which will be covered when we talk about "comparison".
+
+x = 5
+
+You will see that it returns "5". The console knows what is inside the box and returns its
+contents. Type "x" again and press enter and you will see the number is still there. The console has
+remembered the variable we have declared. Notice how we didn't use "var" when we assigned the value 5
+to x? We should always declare a variable once using "var" as it is possible to declare a variable without
+it, but this is considered bad practice (more on that later).
+
+Let's declare another variable, y, and assign the value 10 to it:
+
+var y = 10
+
+This is how you declare and assign a variable in one statement. Each line we type and enter is known as a 
+statement and in turn, statements make up programs. Now let's create anther statement to assign to a new
+variable, called "result":
+
+var result = x + y
+
+If you type
+
+result
+
+you will see the answer of 15. Now your program can refer to this variable and even change it from any point
+onwards:
+
+result = result + 10;
+
+By typing result, you will now see that it equals 25. This is saying, take the result, add 10 to it and then 
+assign this new result to the result variable. And just to be smart, lets jump forward a little and
+use another type of assignment operator that makes the above statement a little shorter:
+
+result += 10;
+
+This is equivalent to "result = result + 10" but is more succinct. There are also other assignment operators
+for subtraction, mulitplication and division.
+
+We have covered a lot here and the power of variables may not yet be obvious to you but you will soon get to 
+see what we can achieve when we start writing our own full programs.
+
+
+===================================================
+Time: 2:30 
+===================================================
+
+
+
